@@ -1,0 +1,14 @@
+file_format: "1"
+id: keeb_corne
+name: KeebMakerCorne
+type: shield
+url: https://github.com/foostan/crkbd/
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - underglow
+siblings:
+  - keeb_corne_left
+  - keeb_corne_right

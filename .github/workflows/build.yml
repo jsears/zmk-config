@@ -2,4 +2,11 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
+    name: 'ZMK Firmware Build'
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+  
+  publish:
+    name: 'ZMK Firmware Publish'
+    uses: jsears/zmk-config/.github/workflows/publish.yml@master
+    if: always() && !cancelled()
+    needs: build
