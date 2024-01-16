@@ -1,7 +1,7 @@
 if SHIELD_KEEB_MINI_CORNE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "KeebMakerMiniCorne"
+    default "KeebMiniCorne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
