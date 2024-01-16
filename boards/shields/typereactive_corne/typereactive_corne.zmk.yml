@@ -1,6 +1,6 @@
 file_format: "1"
 id: typereactive_corne
-name: TypereactiveCorne
+name: TRCorne
 type: shield
 url: https://github.com/foostan/crkbd/
 requires: [pro_micro]

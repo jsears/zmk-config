@@ -1,7 +1,7 @@
 if SHIELD_TYPEREACTIVE_CORNE_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "TypereactiveCorne"
+    default "TRCorne"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
