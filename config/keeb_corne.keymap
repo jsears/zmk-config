@@ -145,7 +145,7 @@
             bindings = <
 &trans  &out OUT_TOG  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &rgb_ug RGB_TOG  &rgb_ug RGB_EFF  &w_snp_u     &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &trans
 &caltd  &kp F1        &kp F2             &kp F3        &kp F4        &kp F5        &none            &w_snp_l         &w_snp_d     &w_snp_r         &none            &trans
-&trans  &kp F12       &bt BT_SEL 0       &bt BT_SEL 1  &bt BT_SEL 2  &kp KP_NUM    &w_lock          &sys_reset       &bootloader  &none            &none            &trans
+&trans  &kp F12       &bt BT_SEL 0       &bt BT_SEL 1  &bt BT_SEL 2  &kp KP_NUM    &w_lock          &sys_reset       &bootloader  &none            &kp K_PWR        &trans
                                          &trans        &trans        &trans        &trans           &trans           &trans
             >;
 
