@@ -23,7 +23,7 @@ jobs:
         with:
           token: ${{ github.token }}
           name: Latest ZMK Firmware
-          tag_name: latest_${{github.base_ref}}
+          tag_name: latest
           fail_on_unmatched_files: false
           draft: false
           prerelease: false
