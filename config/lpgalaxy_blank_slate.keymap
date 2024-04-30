@@ -17,7 +17,7 @@
 
 #define BT(n) BT_SEL n
 
-/ / {
+/ {
     chosen { zmk,matrix_transform = &ortho_transform; };
 
     macros {
