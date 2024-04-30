@@ -6,15 +6,10 @@
 #define QWERTY_BASE 1
 
 #define TBLE_ORTHO   1
-// #define TBLE_MIT     1
-// #define TBLE_DUAL_2U 1
 
-// #define NAV_L 1
 #define RAI_L 1
 #define LOW_L 2
-//   #define NUM_L 2
 #define FUN_L 3
-// #define SYM_L 3
 #define NUM_L 4
 
 // Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
@@ -24,14 +19,7 @@
 
 / {
     chosen {
-       zmk,matrix_transform =
-#ifdef TBLE_DUAL_2U
-                       &dual_2u_transform;
-#elif defined(TBLE_MIT)
-                       &mit_transform;
-#else
-                       &ortho_transform;
-#endif
+       zmk,matrix_transform = &ortho_transform;
     };
 
     macros {
@@ -44,24 +32,13 @@
     
     tap_dances {
     	shifty: shift_caps_word {
-		compatible = "zmk,behavior-tap-dance";
-		label = "TD_SHIFTY";
-		#binding-cells = <0>;
-		tapping-term-ms = <150>;
-		bindings = <&kp LSHFT>, <&caps_word>;
-	};
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SHIFTY";
+            #binding-cells = <0>;
+            tapping-term-ms = <150>;
+            bindings = <&kp LSHFT>, <&caps_word>;
+	    };
     };
-
-// Conditional layer only when we have less thumb keys
-//#ifdef TBLE_DUAL_2U
-//    cond_layers {
-//        compatible = "zmk,conditional-layers";
-//	tri {
-//	    if-layers = <NUM_L NAV_L>;
-//	    then-layer = <SYM_L>;
-//        };
-//    };
-//#endif
 
     keymap {
         compatible = "zmk,keymap";
@@ -85,16 +62,14 @@
 
         raise_layer {
             // --------------------------------------------------------------------------------------------------
-            // |  ALT   |   Q   |   W   |   E   |   R   |   T   |   Y   |   U   |   I   |   O   |   P   |  \ |  |
-            // |  SFT   |   A   |   S   |   D   |   F   |   G   |   H   |   J   |   K   |   L   |   ;   |  ' "  |
-            // |  Ctrl  |   Z   |   X   |   C   |   V   |   B   |   N   |   M   |   , < |   . > |   / ? |  FUN  |
+            // |  ~ `   |   F1  |   F2  |   F3  |   F4  |   F5  |   F6  |   F7  |   F8  |   F9  |  F10  |  F12  |
+            // |        |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |  10   |       |
+            // |        |   Z   |       |   = + |   [   |   {   |   }   |   ]   |   - _ |       |       |       |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
-&kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN   &kp HASH      &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans     &kp NUMBER_1     &kp NUMBER_2  &kp NUMBER_3  &kp N4      &kp N5         &kp N6     &kp N7    &kp N8     &kp N9                &kp N0    &trans
-&trans     &trans           &trans        &kp EQUAL     &kp LBKT    &kp LBRC       &kp RBRC   &kp RBKT  &kp MINUS  &trans                &trans    &trans
-                                          &trans        &trans      &trans         &trans     &trans    &trans
+&kp GRAVE       &kp F1       &kp F2      &kp F3      &kp F4      &kp F5      &kp F6    &kp F7       &kp F8      &kp F9      &kp F10     &kp F12
+&trans          &kp N1       &kp N2      &kp N3      &kp N4      &kp N5      &kP N6    &kp N7       &kp N8      &kp N9      &kp N0      
             >;
 
             label = "Raise";
