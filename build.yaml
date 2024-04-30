@@ -19,14 +19,6 @@
 ---
 include:
   - board: nice_nano_v2
-    shield: keeb_mini_corne_left
-  - board: nice_nano_v2
-    shield: keeb_mini_corne_right
-  - board: nice_nano_v2
-    shield: keeb_corne_left
-  - board: nice_nano_v2
-    shield: keeb_corne_right
-  - board: nice_nano_v2
     shield: typereactive_corne_left
   - board: nice_nano_v2
     shield: typereactive_corne_right

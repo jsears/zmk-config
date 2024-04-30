@@ -28,13 +28,6 @@
             label = "CALTD";
         };
 
-        caltd: caltd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(DEL))>;
-            label = "CALTD";
-        };
-
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
