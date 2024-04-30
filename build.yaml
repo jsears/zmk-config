@@ -30,3 +30,4 @@ include:
     shield: typereactive_corne_left
   - board: nice_nano_v2
     shield: typereactive_corne_right
+  - board: lpgalaxy_blank_slate
