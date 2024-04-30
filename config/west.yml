@@ -11,6 +11,6 @@ manifest:
       import: app/west.yml
     - name: blank-slate-zmk-module
       remote: petejohanson
-      revision: mai
+      revision: mains
   self:
     path: config
