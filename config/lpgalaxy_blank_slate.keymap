@@ -27,7 +27,72 @@
 		wait-ms = <1>;
 		tap-ms = <5>;
                 bindings = <&kp PLUS &kp COLON &kp PLUS &kp N1 &kp COLON &kp RET>;
-		)
+		);
+
+        caltd: caltd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DEL))>;
+            label = "CALTD";
+        };
+
+        alt_tab: alt_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(TAB)>;
+            label = "ALT_TAB";
+        };
+
+        alt_f4: alt_f4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F4)>;
+            label = "ALT_F4";
+        };
+
+        w_snp_l: w_snp_l {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT)>;
+            label = "W_SNP_L";
+        };
+
+        w_snp_r: w_snp_r {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RIGHT)>;
+            label = "W_SNP_R";
+        };
+
+        w_snp_u: w_snp_u {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(UP_ARROW)>;
+            label = "W_SNP_U";
+        };
+
+        w_snp_d: w_snp_d {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(DOWN_ARROW)>;
+            label = "W_SNP_D";
+        };
+
+        w_lock: w_lock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(L)>;
+            label = "W_LOCK";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        esc {
+            bindings = <&kp ESC>;
+            key-positions = <19 20>;
+        };
     };
     
     tap_dances {
@@ -103,7 +168,7 @@
 
             bindings = <
 &trans  &out OUT_TOG  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR    &none    &none       &w_snp_u     &none     &trans      &trans
-&caltd  &none         &none              &none         &kp F4        &kp F5        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
+&caltd  &none         &none              &none         &none         &none         &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
 &trans  &none         &bt BT_SEL 0       &bt BT_SEL 1  &bt BT_SEL 2  &kp KP_NUM    &w_lock  &sys_reset  &bootloader  &trans    &kp K_CALC  &trans
 &none   &none         &none              &trans        &trans        &trans        &trans   &trans      &trans       &none     &none       &none
             >;
