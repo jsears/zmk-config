@@ -17,12 +17,16 @@
 
 #define BT(n) BT_SEL n
 
-/ {
-    chosen {
-       zmk,matrix_transform = &ortho_transform;
-    };
+/ / {
+    chosen { zmk,matrix_transform = &ortho_transform; };
 
     macros {
+        caltd: caltd {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(DEL))>;
+            label = "CALTD";
+        };
 
         caltd: caltd {
             compatible = "zmk,behavior-macro";
