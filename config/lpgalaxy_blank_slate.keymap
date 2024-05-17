@@ -164,7 +164,7 @@
             // --------------------------------------------------------------------------------------------------
             // |        |  OUT  |  POW  |  BTP  |  BTN  |  BTC  |       |       | WSNU  |       |       |       |
             // | caltd  |       |       |       |       |       |       | WSNL  | WSND  | WSNR  |       |       |
-            // |  Ctrl  |       |  BT0  |  BT1  |  BT2  |  NUM  | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
+            // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |       | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
