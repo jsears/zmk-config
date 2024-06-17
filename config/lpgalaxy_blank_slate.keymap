@@ -186,7 +186,7 @@
 
             label = "Num";
             bindings = <
-&none   &none  &none  &none   &none   &none   &kp KP_MINUS     &kp KP_PLUS    &kp F7      &kp F8      &kp F9  &none
+&none   &none  &none  &none   &none   &none   &kp KP_MINUS     &kp KP_PLUS    &kp N7      &kp N8      &kp N9  &none
 &none   &none  &none  &none   &none   &none   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N4      &kp N5      &kp N6  &none
 &none   &none  &none  &none   &none   &none   &none            &kp PERCENT    &kp N1      &kp N2      &kp N3  &trans
 &none   &none  &none  &trans  &trans  &trans  &trans           &trans         &trans      &kp N0      &kp DOT &none
