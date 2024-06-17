@@ -164,14 +164,14 @@
             // --------------------------------------------------------------------------------------------------
             // |        |  OUT  |  POW  |  BTP  |  BTN  |  BTC  |       |       | WSNU  |       |       |       |
             // | caltd  |       |       |       |       |       |       | WSNL  | WSND  | WSNR  |       |       |
-            // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |       | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
+            // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
-&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR  &kvm_sw  &none       &w_snp_u     &none     &trans      &trans
-&caltd  &out OUT_BLE  &none              &none         &none         &none       &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &none       &w_lock  &sys_reset  &bootloader  &trans    &kp K_CALC  &trans
-&none   &none         &none              &trans        &trans        &trans      &trans   &trans      &trans       &none     &none       &none
+&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &kvm_sw  &none       &w_snp_u     &none     &trans      &trans
+&caltd  &out OUT_BLE  &none              &none         &none         &none        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &w_lock  &sys_reset  &bootloader  &trans    &kp K_CALC  &trans
+&none   &none         &none              &trans        &trans        &trans       &trans   &trans      &trans       &none     &none       &none
             >;
 
             label = "System";
@@ -186,10 +186,10 @@
 
             label = "Num";
             bindings = <
-&none   &none  &none  &none   &none   &none   &kp KP_MINUS     &kp KP_PLUS    &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &none
-&none   &none  &none  &none   &none   &none   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &none
-&none   &none  &none  &none   &none   &none   &none            &kp PERCENT    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &trans
-&to 0   &none  &none  &trans  &trans  &trans  &trans           &trans         &trans           &kp KP_NUMBER_0  &kp DOT          &none
+&none   &none  &none  &none   &none   &none   &kp KP_MINUS     &kp KP_PLUS    &kp F7      &kp F8      &kp F9  &none
+&none   &none  &none  &none   &none   &none   &kp KP_MULTIPLY  &kp KP_DIVIDE  &kp N4      &kp N5      &kp N6  &none
+&none   &none  &none  &none   &none   &none   &none            &kp PERCENT    &kp N1      &kp N2      &kp N3  &trans
+&none   &none  &none  &trans  &trans  &trans  &trans           &trans         &trans      &kp N0      &kp DOT &none
             >;
         };
     };
