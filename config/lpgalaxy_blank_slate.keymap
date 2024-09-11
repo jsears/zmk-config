@@ -76,13 +76,6 @@
             bindings = <&kp LG(L)>;
             label = "W_LOCK";
         };
-
-        kvm_sw: kvm_sw {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp KP_NUM &kp KP_NUM>;
-            label = "KVM_SW";
-        };
     };
 
     combos {
@@ -122,14 +115,14 @@
 &kp LEFT_ALT    &kp Q   &kp W   &kp E         &kp R      &kp T      &kp Y    &kp U       &kp I       &kp O    &kp P     &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G      &kp H    &kp J       &kp K       &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B      &kp N    &kp M       &kp COMMA   &kp DOT  &kp FSLH  &mo 3
-&mo 4           &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &none    &none     &none 
+&none           &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &none    &none     &none 
             >;
         };
 
         raise_layer {
             // --------------------------------------------------------------------------------------------------
             // |  ~ `   |   F1  |   F2  |   F3  |   F4  |   F5  |   F6  |   F7  |   F8  |   F9  |  F10  |  F12  |
-            // |        |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |  10   |       |
+            // |        |   1   |   2   |   3   |   4   |   5   |   6   |   7   |   8   |   9   |   0   |       |
             // |        |       |       |   = + |   [   |   {   |   }   |   ]   |   - _ |       |       |       |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
@@ -162,8 +155,8 @@
 
         func_layer {
             // --------------------------------------------------------------------------------------------------
-            // |        |  OUT  |  POW  |  BTP  |  BTN  |  BTC  |       |       | WSNU  |       |       |       |
-            // | caltd  |       |       |       |       |       |       | WSNL  | WSND  | WSNR  |       |       |
+            // |        |  USB  |  POW  |  BTP  |  BTN  |  BTC  |       |       | WSNU  |       |       |       |
+            // | caltd  |  BLE  |       |       |       |       |       | WSNL  | WSND  | WSNR  |       |       |
             // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
