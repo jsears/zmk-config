@@ -81,6 +81,13 @@
     combos {
         compatible = "zmk,combos";
 
+            // Key Positions
+            // -------------------------------------------------------------------------------------------------------------
+            // |   0    |   1    |   2    |   3    |   4    |   5    |   6    |   7    |   8    |   9    |   10   |   11   |
+            // |   12   |   13   |   14   |   15   |   16   |   17   |   18   |   19   |   20   |   21   |   22   |   23   |
+            // |   24   |   25   |   26   |   27   |   28   |   29   |   20   |   31   |   32   |   33   |   34   |   35   |
+            // |   36   |   37   |   38   |   39   |   40   |   41   |   42   |   43   |   44   |   45   |   46   |   47   |
+
         esc {
             bindings = <&kp ESC>;
             key-positions = <19 20>;
@@ -115,7 +122,7 @@
 &kp LEFT_ALT    &kp Q   &kp W   &kp E         &kp R      &kp T      &kp Y    &kp U       &kp I       &kp O    &kp P     &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G      &kp H    &kp J       &kp K       &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B      &kp N    &kp M       &kp COMMA   &kp DOT  &kp FSLH  &mo 3
-&none           &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &none    &none     &none 
+&trans          &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &caltd    &none     &w_lock 
             >;
         };
 
@@ -130,7 +137,7 @@
 &kp GRAVE  &kp F1  &kp F2  &kp F3     &kp F4     &kp F5     &kp F6    &kp F7      &kp F8      &kp F9  &kp F10  &kp F12
 &trans     &kp N1  &kp N2  &kp N3     &kp N4     &kp N5     &kp N6    &kp N7      &kp N8      &kp N9  &kp N0   &none 
 &trans     &none   &trans  &kp EQUAL  &kp LBKT   &kp LBRC   &kp RBRC  &kp RBKT    &kp MINUS   &trans  &trans   &trans
-&none      &none   &trans  &kp LGUI   &lt 1 TAB  &kp SPACE  &kp RET   &lt 2 BSPC  &kp RSHIFT  &none   &none    &none 
+&trans      &none   &trans  &kp LGUI   &lt 1 TAB  &kp SPACE  &kp RET   &lt 2 BSPC  &kp RSHIFT  &none   &none    &none 
             >;
 
             label = "Raise";
@@ -147,7 +154,7 @@
 &trans  &kp DEL  &kp HOME  &kp PG_UP  &none   &none   &none     &none       &kp UP      &none         &none         &trans
 &trans  &kp INS  &kp END   &kp PG_DN  &none   &none   &none     &kp LEFT    &kp DOWN    &kp RIGHT     &none         &trans
 &trans  &none    &none     &none      &none   &none   &kp C_PP  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &trans
-&none   &none    &none     &trans     &trans  &trans  &trans    &trans      &trans      &none         &none         &none
+&trans   &none    &none     &trans     &trans  &trans  &trans    &trans      &trans     &none         &none         &none
             >;
 
             label = "Lower";
@@ -161,10 +168,10 @@
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
-&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &kvm_sw  &none       &w_snp_u     &none     &trans      &trans
-&caltd  &out OUT_BLE  &none              &none         &none         &none        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
+&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &none    &none       &w_snp_u     &none     &trans      &trans
+&trans  &out OUT_BLE  &none              &none         &none         &none        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &w_lock  &sys_reset  &bootloader  &trans    &kp K_CALC  &trans
-&none   &none         &none              &trans        &trans        &trans       &trans   &trans      &trans       &none     &none       &none
+&trans  &none         &none              &trans        &trans        &trans       &trans   &trans      &trans       &none     &none       &none
             >;
 
             label = "System";
