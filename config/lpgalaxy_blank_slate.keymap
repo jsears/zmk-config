@@ -109,9 +109,8 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <250>; // Adjust as needed
-            bindings = <
-                &mo 4, // Single tap activates NUM layer
-                &mo 4  // Double tap activates NUM layer
+            bindings = <&mo 4, // Single tap activates NUM layer>,
+                <&mo 4  // Double tap activates NUM layer
             >;
             };
         };
