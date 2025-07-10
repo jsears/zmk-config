@@ -105,6 +105,16 @@
     };
 
     behaviors {
+        td_num: tap_dance_layer {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>; // Adjust as needed
+            bindings = <
+                &mo 4, // Single tap activates NUM layer
+                &mo 4  // Double tap activates NUM layer
+            >;
+            };
+        };
     };
 
     keymap {
@@ -122,7 +132,7 @@
 &kp LEFT_ALT    &kp Q   &kp W   &kp E         &kp R      &kp T      &kp Y    &kp U       &kp I       &kp O    &kp P     &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G      &kp H    &kp J       &kp K       &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B      &kp N    &kp M       &kp COMMA   &kp DOT  &kp FSLH  &mo 3
-&trans          &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &caltd    &none     &w_lock 
+&td_num         &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RIGHT_SHIFT  &caltd    &none     &w_lock 
             >;
         };
 
@@ -152,7 +162,7 @@
 
             bindings = <
 &trans  &kp DEL  &kp HOME  &kp PG_UP  &none   &none   &none     &none       &kp UP      &none         &none         &trans
-&trans  &kp INS  &kp END   &kp PG_DN  &none   &none   &none     &kp LEFT    &kp DOWN    &kp RIGHT     &none         &trans
+&trans  &kp INS  &kp END   &kp PG_DN  &none   &none   &kp C_MUTE &kp LEFT   &kp DOWN    &kp RIGHT     &none         &trans
 &trans  &none    &none     &none      &none   &none   &kp C_PP  &kp C_PREV  &kp C_NEXT  &kp C_VOL_DN  &kp C_VOL_UP  &trans
 &trans   &none    &none     &trans     &trans  &trans  &trans    &trans      &trans     &none         &none         &none
             >;
@@ -164,13 +174,13 @@
             // --------------------------------------------------------------------------------------------------
             // |        |  USB  |  POW  |  BTP  |  BTN  |  BTC  |       |       | WSNU  |       |       |       |
             // | caltd  |  BLE  |       |       |       |       |       | WSNL  | WSND  | WSNR  |       |       |
-            // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  | WLCK  |  RST  | BOOT  |       |  CALC |  FUN  |
+            // |  Ctrl  |  BT0  |  BT1  |  BT2  |  BT3  |  BT4  | WLCK  |  RST  | BOOT  |       |       |  FUN  |
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
 &trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &none    &none       &w_snp_u     &none     &trans      &trans
 &trans  &out OUT_BLE  &none              &none         &none         &none        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &w_lock  &sys_reset  &bootloader  &trans    &kp K_CALC  &trans
+&trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &trans   &sys_reset  &bootloader  &trans    &trans      &trans
 &trans  &none         &none              &trans        &trans        &trans       &trans   &trans      &trans       &none     &none       &none
             >;
 
