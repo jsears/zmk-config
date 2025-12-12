@@ -11,74 +11,11 @@
 #define FUN_L 3
 #define NUM_L 4
 
-#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-
-// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
-
-&lt { quick_tap_ms = <200>; };
-
 #define BT(n) BT_SEL n
 
 / {
     chosen { zmk,matrix_transform = &ortho_transform; };
 
-    macros {
-        caltd: caltd {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LC(LA(DEL))>;
-            label = "CALTD";
-        };
-
-        alt_tab: alt_tab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(TAB)>;
-            label = "ALT_TAB";
-        };
-
-        alt_f4: alt_f4 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(F4)>;
-            label = "ALT_F4";
-        };
-
-        w_snp_l: w_snp_l {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(LEFT)>;
-            label = "W_SNP_L";
-        };
-
-        w_snp_r: w_snp_r {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(RIGHT)>;
-            label = "W_SNP_R";
-        };
-
-        w_snp_u: w_snp_u {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(UP_ARROW)>;
-            label = "W_SNP_U";
-        };
-
-        w_snp_d: w_snp_d {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(DOWN_ARROW)>;
-            label = "W_SNP_D";
-        };
-
-        w_lock: w_lock {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LG(L)>;
-            label = "W_LOCK";
-        };
-    };
 
     combos {
         compatible = "zmk,combos";
@@ -99,7 +36,6 @@
     tap_dances {
         shifty: shift_caps_word {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHIFTY";
             #binding-cells = <0>;
             tapping-term-ms = <150>;
             bindings = <&kp LSHFT>, <&caps_word>;
@@ -121,7 +57,7 @@
 &kp LEFT_ALT    &kp Q   &kp W   &kp E         &kp R      &kp T      &kp Y    &kp U       &kp I       &kp O    &kp P     &kp BSLH
 &kp LEFT_SHIFT  &kp A   &kp S   &kp D         &kp F      &kp G      &kp H    &kp J       &kp K       &kp L    &kp SEMI  &kp SQT
 &kp LCTRL       &kp Z   &kp X   &kp C         &kp V      &kp B      &kp N    &kp M       &kp COMMA   &kp DOT  &kp FSLH  &mo 3
-&tog 4          &none   &none   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &caltd   &none     &kp LG(L)
+&tog 4          &none   &kp LA(TAB)   &kp LEFT_GUI  &lt 1 TAB  &kp SPACE  &kp RET  &lt 2 BSPC  &kp RSHIFT  &kp LC(LA(DEL))   &none     &kp LG(L)
             >;
         };
 
@@ -167,8 +103,8 @@
             // |        |       |       |  GUI  |  LOW  |  SPC  |  ENT  |  RAI  |  SFT  |       |       |       |
 
             bindings = <
-&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &none    &none       &w_snp_u     &none     &trans      &trans
-&trans  &out OUT_BLE  &none              &none         &none         &none        &none    &w_snp_l    &w_snp_d     &w_snp_r  &trans      &trans
+&trans  &out OUT_USB  &ext_power EP_TOG  &bt BT_PRV    &bt BT_NXT    &bt BT_CLR   &none    &none       &kp LG(UP_ARROW)     &none     &trans      &trans
+&trans  &out OUT_BLE  &none              &none         &none         &none        &none    &kp LG(LEFT) &kp LG(DOWN_ARROW) &kp LG(RIGHT)  &trans      &trans
 &trans  &bt BT_SEL 0  &bt BT_SEL 1       &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4 &trans   &sys_reset  &bootloader  &trans    &trans      &trans
 &trans  &none         &none              &trans        &trans        &trans       &trans   &trans      &trans       &none     &none       &none
             >;
