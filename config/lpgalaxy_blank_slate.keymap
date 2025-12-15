@@ -39,13 +39,6 @@
             tapping-term-ms = <150>;
             bindings = <&kp LSHFT>, <&caps_word>;
         };
-
-        soft_off: soft_off {
-            compatible = "zmk,behavior-soft-off";
-            label = "SOFT_OFF";
-            #binding-cells = <0>;
-            hold-time-ms = <5000>;
-        };
     };
 
     behaviors {
