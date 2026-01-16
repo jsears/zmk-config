@@ -32,9 +32,17 @@
         };
     };
 
-    &lt {
-        quick-tap-ms = <125>;
-    };
+    behaviors {
+        lt: layer_tap {
+            quick-tap-ms = <125>;
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&mo>, <&kp>;
+            display-name = "Layer-Tap";
+        };
+    }
 
     keymap {
         compatible = "zmk,keymap";
