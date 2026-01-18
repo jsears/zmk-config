@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
-#include <dt-bindings/zmk/keys.h>
+// #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define QWERTY_BASE 1
@@ -10,6 +10,9 @@
 #define LOW_L 2
 #define FUN_L 3
 #define NUM_L 4
+
+// Using layer taps on thumbs, having quick tap as well helps w/ repeating space/backspace
+&lt { quick_tap_ms = <200>; };
 
 #define BT(n) BT_SEL n
 
