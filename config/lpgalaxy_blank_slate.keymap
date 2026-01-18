@@ -33,6 +33,11 @@
             bindings = <&kp ESC>;
             key-positions = <19 20>;
         };
+
+        caps {
+            bindings = <&kp CAPS>;
+            key-positions = <1 2>;
+        }
     };
 
     keymap {
