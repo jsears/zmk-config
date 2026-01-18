@@ -38,7 +38,7 @@
         caps {
             bindings = <&kp CAPS>;
             key-positions = <1 2>;
-        }
+        };
     };
 
     keymap {
